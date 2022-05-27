@@ -29,11 +29,15 @@ public class StepDefinition extends BrowserSetup {
 	public void user_enters_username_and_password(String userName, String Password) {
 	 
 		driver.findElement(By.id("email")).sendKeys(userName);
+		System.out.println("User name entered");
 		driver.findElement(By.id("pass")).sendKeys(Password);
+		System.out.println("Password entered");
 	}
 	@When("Click on login button")
 	public void click_on_login_button() {
 		driver.findElement(By.name("login")).click();
+		System.out.println("Clicked on login button");
+		
 	}
 	@Then("verify login error {string}")
 	public void verify_login_error(String Error) {
@@ -41,11 +45,13 @@ public class StepDefinition extends BrowserSetup {
 		WebElement ele=driver.findElement(By.xpath("//div[@id='email_container']/div[2]"));
 		waitforElement(ele);
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@id='email_container']/div[2]")).getText(),Error);
-	 
+		System.out.println("Verified login error");
 	}
 	@Then("Close the browser session")
 	public void close_the_browser_session() {
+		
 	 driver.close();
+	 System.out.println("Browser Session Closed");
 	}
 
 }
