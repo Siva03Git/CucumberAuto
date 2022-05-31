@@ -22,7 +22,7 @@ public class StepDefinition extends BrowserSetup {
 		
 		Setup(ApplicationURL);
 		driver.manage().window().maximize();
-		System.out.println("Browsersetup success");
+		System.out.println("Browsersetup is success");
 	
 	}
 	@When("User enters username {string} and password {string}")
